@@ -1,0 +1,108 @@
+.main-container{
+    border: 2px solid;
+    height: 250px;
+    padding: 8px;
+    width: 380px;
+    text-align: center;
+    background-color: aliceblue;
+    box-sizing: border-box;
+}
+.main{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.main-container>input{
+    padding: 8px;
+    width: 70px;
+    border: none;
+    border-radius: 5px;
+    background-color: #203040;
+    color: white;
+    cursor: pointer;
+}
+.box{
+    width: 65px ;
+    height:65px ;
+    border: 2px solid;
+    align-self: center;
+    background-color:rgb(29, 186, 189);
+    transition: transform 0.4s linear;
+    margin:65px auto;
+}
+.trans:hover ~ .box{
+  transform: translate(50px,50px);
+}
+.scale:hover ~ .box {
+    transform: scale(1.8); 
+}
+.rotate:hover ~ .box {
+    transform: rotate(360deg); 
+}
+.skew:hover ~ .box {
+    transform: skew(30deg, 30deg); 
+}
+
+/* fan speed  */
+.box2{
+    font-size:100px;
+    align-self: center;
+    transition: 0.4s ease;
+    margin:63px auto;
+    color: blue;
+}
+img {
+    transition: transform 1s linear; 
+    width:100px;
+    height: 100px;
+    mix-blend-mode: multiply;
+}
+.main-container>.speed{
+    padding: 8px;
+    width: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #203040;
+    color: white;
+    cursor: pointer;
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.speed1:hover ~ .box2>img {
+    animation: rotate 3s linear infinite;
+}
+.speed2:hover ~ .box2>img {
+    animation: rotate 2s linear infinite;
+}
+.speed3:hover ~ .box2>img {
+    animation: rotate 1s linear infinite;
+}
+.speed4:hover ~ .box2>img {
+    animation: rotate 0.4s linear infinite;
+}
+
+/* media quries */
+@media screen and (width <=450px) {
+    .main-container{
+        width: 300px;
+    }
+    .main-container>input{
+        width: fit-content;
+    }
+      .scale:hover ~ .box {
+          transform: scale(2.5); 
+      }
+      .rotate:hover ~ .box {
+          transform: rotate(360deg); 
+      }
+      .skew:hover ~ .box {
+          transform: skew(60deg, 60deg); 
+      }
+}
